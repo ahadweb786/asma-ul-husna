@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asma-ul-Husna | 99 Names of Allah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color:white;
+}
+
+header{
+  text-align:center;
+  padding:30px;
+  background: rgba(0,0,0,0.4);
+}
+
+header h1{
+  font-size:32px;
+  color:#a8ffea;
+}
+
+header p{
+  color:#dff;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+  padding:25px;
+}
+
+.card{
+  background: rgba(255,255,255,0.12);
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform: translateY(-8px) scale(1.03);
+  background: rgba(255,255,255,0.18);
+}
+
+.arabic{
+  font-size:28px;
+  text-align:center;
+  color:#9dffd9;
+}
+
+.name{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.meaning{
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.6;
+  color:#f1f1f1;
+}
+
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+  background: rgba(0,0,0,0.4);
+  color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🕌 Asma-ul-Husna</h1>
+  <p>Allah ke 99 Mubarak Naam aur unke Meaning</p>
+</header>
+
+<div class="container" id="names"></div>
+
+<footer>
+  © Allah ki yaad – dil ka sukoon 🌙
+</footer>
+
+<script>
+const asma = [
+{a:"ٱلرَّحْمَٰنُ",n:"Ar-Rahman",u:"Nihayat Meherban",h:"Behad meherban"},
+{a:"ٱلرَّحِيمُ",n:"Ar-Raheem",u:"Bohat Reham Karne Wala",h:"Bahut rehmat wala"},
+{a:"ٱلْمَلِكُ",n:"Al-Malik",u:"Badshah",h:"Asal badshah"},
+{a:"ٱلْقُدُّوسُ",n:"Al-Quddus",u:"Har burai se paak",h:"Bilkul paak"},
+{a:"ٱلسَّلَامُ",n:"As-Salaam",u:"Salamati dene wala",h:"Aman dene wala"},
+{a:"ٱلْمُؤْمِنُ",n:"Al-Mu'min",u:"Iman dene wala",h:"Hifazat dene wala"},
+{a:"ٱلْمُهَيْمِنُ",n:"Al-Muhaymin",u:"Nigrani karne wala",h:"Dekh-bhaal karne wala"},
+{a:"ٱلْعَزِيزُ",n:"Al-Aziz",u:"Zabardast qudrat wala",h:"Sab par ghalib"},
+{a:"ٱلْجَبَّارُ",n:"Al-Jabbar",u:"Zor rakhne wala",h:"Sab theek karne wala"},
+{a:"ٱلْمُتَكَبِّرُ",n:"Al-Mutakabbir",u:"Buzurgi wala",h:"Sab se buland"},
+
+{a:"ٱلْخَالِقُ",n:"Al-Khaaliq",u:"Paida karne wala",h:"Creator"},
+{a:"ٱلْبَارِئُ",n:"Al-Baari",u:"Behtareen banane wala",h:"Maker"},
+{a:"ٱلْمُصَوِّرُ",n:"Al-Musawwir",u:"Surat dene wala",h:"Shakal dene wala"},
+{a:"ٱلْغَفَّارُ",n:"Al-Ghaffar",u:"Bohat bakhshne wala",h:"Bar bar maaf karne wala"},
+{a:"ٱلْقَهَّارُ",n:"Al-Qahhaar",u:"Sab par qabu rakhne wala",h:"All-powerful"},
+{a:"ٱلْوَهَّابُ",n:"Al-Wahhab",u:"Bina maange dene wala",h:"Free dene wala"},
+{a:"ٱلرَّزَّاقُ",n:"Ar-Razzaq",u:"Rizq dene wala",h:"Rizq dene wala"},
+{a:"ٱلْفَتَّاحُ",n:"Al-Fattah",u:"Darwaze kholne wala",h:"Problems hal karne wala"},
+{a:"ٱلْعَلِيمُ",n:"Al-Aleem",u:"Sab kuch janne wala",h:"All-knowing"},
+{a:"ٱلْقَابِضُ",n:"Al-Qaabid",u:"Rok lene wala",h:"Restrict karne wala"},
+
+{a:"ٱلْبَاسِطُ",n:"Al-Baasit",u:"Khol dene wala",h:"Expand karne wala"},
+{a:"ٱلْخَافِضُ",n:"Al-Khaafid",u:"Neecha karne wala",h:"Down karne wala"},
+{a:"ٱلرَّافِعُ",n:"Ar-Rafi",u:"Buland karne wala",h:"Upar uthata hai"},
+{a:"ٱلْمُعِزُّ",n:"Al-Mu'izz",u:"Izzat dene wala",h:"Respect dene wala"},
+{a:"ٱلْمُذِلُّ",n:"Al-Mudhill",u:"Zillat dene wala",h:"Be-izzat karne wala"},
+{a:"ٱلسَّمِيعُ",n:"As-Samee",u:"Sab sunne wala",h:"All-hearing"},
+{a:"ٱلْبَصِيرُ",n:"Al-Baseer",u:"Sab dekhne wala",h:"All-seeing"},
+{a:"ٱلْحَكَمُ",n:"Al-Hakam",u:"Faisla karne wala",h:"Judge"},
+{a:"ٱلْعَدْلُ",n:"Al-Adl",u:"Insaaf karne wala",h:"Just"},
+{a:"ٱللَّطِيفُ",n:"Al-Lateef",u:"Bohat narm",h:"Kind & gentle"},
+
+{a:"ٱلْخَبِيرُ",n:"Al-Khabeer",u:"Har cheez ka ilm",h:"Well aware"},
+{a:"ٱلْحَلِيمُ",n:"Al-Haleem",u:"Bardasht karne wala",h:"Patient"},
+{a:"ٱلْعَظِيمُ",n:"Al-Azeem",u:"Bohat azeem",h:"Great"},
+{a:"ٱلْغَفُورُ",n:"Al-Ghafoor",u:"Bakhsh dene wala",h:"Forgiving"},
+{a:"ٱلشَّكُورُ",n:"Ash-Shakoor",u:"Qadr karne wala",h:"Appreciative"},
+{a:"ٱلْعَلِيُّ",n:"Al-Aliyy",u:"Sab se buland",h:"Most high"},
+{a:"ٱلْكَبِيرُ",n:"Al-Kabeer",u:"Bohat bada",h:"Most great"},
+{a:"ٱلْحَفِيظُ",n:"Al-Hafeez",u:"Hifazat karne wala",h:"Protector"},
+{a:"ٱلْمُقِيتُ",n:"Al-Muqeet",u:"Rizq pahunchane wala",h:"Sustainer"},
+{a:"ٱلْحَسِيبُ",n:"Al-Haseeb",u:"Hisab lene wala",h:"Account taker"},
+
+{a:"ٱلْجَلِيلُ",n:"Al-Jaleel",u:"Shan wala",h:"Majestic"},
+{a:"ٱلْكَرِيمُ",n:"Al-Kareem",u:"Karam karne wala",h:"Most generous"},
+{a:"ٱلرَّقِيبُ",n:"Ar-Raqeeb",u:"Nigrani rakhne wala",h:"Watcher"},
+{a:"ٱلْمُجِيبُ",n:"Al-Mujeeb",u:"Dua qubool karne wala",h:"Accepts dua"},
+{a:"ٱلْوَاسِعُ",n:"Al-Waasi",u:"Bohat wasi",h:"Unlimited"},
+{a:"ٱلْحَكِيمُ",n:"Al-Hakeem",u:"Hikmat wala",h:"Wise"},
+{a:"ٱلْوَدُودُ",n:"Al-Wadood",u:"Mohabbat karne wala",h:"Most loving"},
+{a:"ٱلْمَجِيدُ",n:"Al-Majeed",u:"Buzurgi wala",h:"Glorious"},
+{a:"ٱلْبَاعِثُ",n:"Al-Ba'ith",u:"Uthane wala",h:"Resurrector"},
+{a:"ٱلشَّهِيدُ",n:"Ash-Shaheed",u:"Gawah",h:"Witness"},
+
+{a:"ٱلْحَقُّ",n:"Al-Haqq",u:"Sachcha",h:"Truth"},
+{a:"ٱلْوَكِيلُ",n:"Al-Wakeel",u:"Kaam banane wala",h:"Trustee"},
+{a:"ٱلْقَوِيُّ",n:"Al-Qawiyy",u:"Taqat wala",h:"All-strong"},
+{a:"ٱلْمَتِينُ",n:"Al-Mateen",u:"Mazboot",h:"Firm"},
+{a:"ٱلْوَلِيُّ",n:"Al-Waliyy",u:"Madadgar",h:"Protector friend"},
+{a:"ٱلْحَمِيدُ",n:"Al-Hameed",u:"Tareef ke laiq",h:"Praiseworthy"},
+{a:"ٱلْمُحْصِي",n:"Al-Muhsi",u:"Gin ne wala",h:"Counter"},
+{a:"ٱلْمُبْدِئُ",n:"Al-Mubdi",u:"Shuru karne wala",h:"Originator"},
+{a:"ٱلْمُعِيدُ",n:"Al-Mu'eed",u:"Dobara paida karne wala",h:"Restorer"},
+{a:"ٱلْمُحْيِى",n:"Al-Muhyi",u:"Zinda karne wala",h:"Giver of life"},
+{a:"ٱلْمُمِيتُ",n:"Al-Mumeet",u:"Maut dene wala",h:"Giver of death"},
+{a:"ٱلْحَىُّ",n:"Al-Hayy",u:"Zinda",h:"Ever-living"},
+{a:"ٱلْقَيُّومُ",n:"Al-Qayyum",u:"Sab ko sambhalne wala",h:"Self-existing"},
+{a:"ٱلْوَاجِدُ",n:"Al-Waajid",u:"Har cheez paane wala",h:"Perceiver"},
+{a:"ٱلْمَاجِدُ",n:"Al-Maajid",u:"Shan wala",h:"Illustrious"},
+{a:"ٱلْوَاحِدُ",n:"Al-Wahid",u:"Ek",h:"One"},
+{a:"ٱلصَّمَدُ",n:"As-Samad",u:"Be-niyaz",h:"Independent"},
+{a:"ٱلْقَادِرُ",n:"Al-Qadir",u:"Qudrat wala",h:"All-powerful"},
+{a:"ٱلْمُقْتَدِرُ",n:"Al-Muqtadir",u:"Mukammal taqat wala",h:"Absolute power"},
+{a:"ٱلْمُقَدِّمُ",n:"Al-Muqaddim",u:"Aage badhane wala",h:"Promoter"},
+{a:"ٱلْمُؤَخِّرُ",n:"Al-Mu'akhkhir",u:"Peeche rakhne wala",h:"Delayer"},
+{a:"ٱلأَوَّلُ",n:"Al-Awwal",u:"Sab se pehle",h:"First"},
+{a:"ٱلآخِرُ",n:"Al-Aakhir",u:"Sab ke baad",h:"Last"},
+{a:"ٱلظَّاهِرُ",n:"Az-Zaahir",u:"Zahir",h:"Manifest"},
+{a:"ٱلْبَاطِنُ",n:"Al-Baatin",u:"Posheeda",h:"Hidden"},
+{a:"ٱلْوَالِي",n:"Al-Waali",u:"Hakim",h:"Governor"},
+{a:"ٱلْمُتَعَالِي",n:"Al-Muta'ali",u:"Buland",h:"Exalted"},
+{a:"ٱلْبَرُّ",n:"Al-Barr",u:"Ehsan karne wala",h:"Source of goodness"},
+{a:"ٱلتَّوَّابُ",n:"At-Tawwab",u:"Tauba qubool karne wala",h:"Accepts repentance"},
+{a:"ٱلْمُنْتَقِمُ",n:"Al-Muntaqim",u:"Saza dene wala",h:"Avenger"},
+{a:"ٱلْعَفُوُّ",n:"Al-Afuww",u:"Maaf karne wala",h:"Pardoner"},
+{a:"ٱلرَّؤُوفُ",n:"Ar-Ra'oof",u:"Nihayat reham wala",h:"Most kind"},
+{a:"مَالِكُ ٱلْمُلْكِ",n:"Maalik-ul-Mulk",u:"Saltanat ka malik",h:"Owner of kingdom"},
+{a:"ذُو ٱلْجَلَالِ وَٱلْإِكْرَامِ",n:"Dhul-Jalali wal-Ikram",u:"Jalal aur ikram wala",h:"Lord of honor"},
+{a:"ٱلْمُقْسِطُ",n:"Al-Muqsit",u:"Insaf karne wala",h:"Most just"},
+{a:"ٱلْجَامِعُ",n:"Al-Jaami",u:"Ikhatta karne wala",h:"Gatherer"},
+{a:"ٱلْغَنِيُّ",n:"Al-Ghani",u:"Be-niyaz",h:"Self-sufficient"},
+{a:"ٱلْمُغْنِي",n:"Al-Mughni",u:"Ameer karne wala",h:"Enricher"},
+{a:"ٱلْمَانِعُ",n:"Al-Maani",u:"Rokne wala",h:"Preventer"},
+{a:"ٱلضَّارُ",n:"Ad-Daarr",u:"Nuksaan dene wala",h:"Distresser"},
+{a:"ٱلنَّافِعُ",n:"An-Naafi",u:"Faida dene wala",h:"Benefiter"},
+{a:"ٱلنُّورُ",n:"An-Noor",u:"Noor",h:"Light"},
+{a:"ٱلْهَادِي",n:"Al-Haadi",u:"Hidayat dene wala",h:"Guide"},
+{a:"ٱلْبَدِيعُ",n:"Al-Badee",u:"Be-misaal",h:"Incomparable"},
+{a:"ٱلْبَاقِي",n:"Al-Baaqi",u:"Hamesha rehne wala",h:"Everlasting"},
+{a:"ٱلْوَارِثُ",n:"Al-Waarith",u:"Sab ka waris",h:"Inheritor"},
+{a:"ٱلرَّشِيدُ",n:"Ar-Rasheed",u:"Raah dikhane wala",h:"Guide to right"},
+{a:"ٱلصَّبُورُ",n:"As-Saboor",u:"Sabr karne wala",h:"Most patient"}
+];
+
+
+const box = document.getElementById("names");
+asma.forEach(x=>{
+box.innerHTML += `
+<div class="card">
+  <div class="arabic">${x.a}</div>
+  <div class="name">${x.n}</div>
+  <div class="meaning">
+    <b>Urdu:</b> ${x.u}<br>
+    <b>Hinglish:</b> ${x.h}
+  </div>
+</div>`;
+});
+</script>
+</body>
+</html>
