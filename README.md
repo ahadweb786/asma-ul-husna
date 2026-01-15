@@ -1,2 +1,27 @@
-# imdex.html
-Ye app Allah ke 99 Mubarak Naam (Asma-ul-Husna) ko khoobsurat aur asaan tareeke se pesh karti hai. Har naam ke saath Arabic, Hinglish aur Urdu meaning diya gaya hai, jisse samajhna aur yaad rakhna asaan ho jata hai. Is app ka design nature-inspired hai jo dil ko sukoon aur roohaniyat ka ehsaas deta hai. Ye app har umar ke logon ke liye  hai.
+# 👋 Hi, I'm Ahad
+
+I'm a beginner web developer who builds clean and simple websites
+for small businesses and personal use.
+
+## 🛠 Skills
+- HTML
+- CSS
+- JavaScript
+- Responsive Design
+
+## 💼 What I Can Do
+- Business website
+- Portfolio website
+- Landing page
+- Simple web apps
+
+## 📌 Sample Projects
+- Business Website
+- Portfolio Website
+- Calculator App
+
+## 📞 Contact Me
+- Email: yourname@gmail.com
+- GitHub: https://github.com/yourusername
+
+I'm open for freelance and learning opportunities.
