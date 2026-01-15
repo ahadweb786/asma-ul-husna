@@ -21,7 +21,7 @@ for small businesses and personal use.
 - Calculator App
 
 ## 📞 Contact Me
-- Email: yourname@gmail.com
-- GitHub: https://github.com/yourusername
+- Email: aliahad7170@gamil.com
+- GitHub: https://github.com/ahad web dev
 
 I'm open for freelance and learning opportunities.
